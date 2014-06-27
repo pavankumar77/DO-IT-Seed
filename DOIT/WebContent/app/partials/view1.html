@@ -1,3 +1,92 @@
-<div class="jumbotron">
-  <p ng-bind="message"></p>
+
+<div>
+	<div class="firstContainer">
+
+		<div class="row">
+			<div class="col-md-8">
+				<h2>Welcome to My Web</h2>
+			</div>
+
+			<div class="col-md-4">
+			
+			
+				
+
+			</div>
+		</div>
+<!-- end of first -->
+
+<!-- tabular representation -->		
+<div class =col-md-4">
+	<table class="table table-bordered">
+         
+         
+            <tr>
+				<th><h4>Project</h4></th>
+				<th><h4>Description</h4></th>
+				<th><h4>Coordinators</h4></th>
+				<th><h4>select</h4></th>
+     		</tr>
+       
+			<tr ng-repeat="project in Projects">
+			
+				<td >{{project.Name}}</td>
+				<td>{{project.Description}}</td>
+				<td><span ng-repeat="Coordinator in project.Coordinators"> {{project.Coordinators}} </span></td>
+				<td >
+					<div class="radio"	>
+						<a href="#view1/{{project.id}}">
+							 <input type="radio"name="optionsRadios">
+						</a>
+					</div>
+				</td>	
+			</tr>
+
+	</table>
+</div>
+	
+<!-- end of table -->
+  
+<!-- modal code  for creating project -->
+
+
+
+<div ng-controller="createProjectControl">
+   
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+   <div class="modal-body">
+       	<div class="form-group">
+      		<label>Project name:</label>
+      			<input ng-model="dynamicPopover" class="form-control"></input>
+    	</div>
+
+    <div class="form-group">
+         <label>Project Description:</label>
+     	 <textarea ng-model="dynamicPopoverTitle" class="form-control">
+   		 </textarea></div>
+  
+    </div>  
+			
+ <!-- Single button -->
+
+    <div class="form-group">
+         <label>Add Coordinators:</label>
+	  
+
+ <input></input>
+    </div>
+
+   	
+
+      <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">SAVE</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+      </div>
+   
+ </script>
+    
+<a class="btn" ng-click="open()">Create project</a>		
 </div>

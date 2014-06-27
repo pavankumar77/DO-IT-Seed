@@ -28,3 +28,24 @@
   content: "";
   padding: 0;
 }
+
+
+
+.firstContainer{
+	
+	padding-top:30px;
+	padding-bottom:80px;
+	padding-left:80px;
+	padding-right:40px;
+	
+	
+	}
+	
+	
+.firstColumn,.thirdColumn,.fourthColumn{
+	width:150px;
+}	
+.secondColumn{
+	width:400px;	
+	}
+	
