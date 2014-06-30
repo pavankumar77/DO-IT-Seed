@@ -12,11 +12,11 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   //$locationProvider.html5Mode(true);
-  $routeProvider.when('/view1',{
-	  					templateUrl: 'partials/view1.html',
+  $routeProvider.when('/projectList',{
+	  					templateUrl: 'partials/projectList.html',
 	  					controller: 'pList'})
-	  			.when('/view1/:id',{
-	  					templateUrl: 'partials/view2.html', 
+	  			.when('/projectList/:id',{
+	  					templateUrl: 'partials/projectDetails.html', 
 	  					controller: 'pDetails'});
 			  	
 }]);

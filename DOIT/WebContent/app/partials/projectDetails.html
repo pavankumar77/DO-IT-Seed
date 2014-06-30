@@ -1,0 +1,81 @@
+<div class="jumbotron">
+
+	<!-- <h2 ng-repeat="Detail in Details">{{Detail.Name}}</h2>  -->
+
+	<h1 ng-bind="coordinator in Details.coordinators">{{Details.Name}}</h1>
+
+
+
+
+
+	<span>
+		<h5>Filter By Priority</h5>
+
+
+
+		<button type="button" class="btn btn-" data-toggle="button"  ng-click="priorityFilters={priority:'showTopper'}" >ShowTopper</button>
+		<button type="button" class="btn btn-" data-toggle="button"  ng-click="priorityFilters={priority:'high'}">High</button>
+		<button type="button" class="btn btn-" data-toggle="button"  ng-click="priorityFilters={priority:'medium'}">Medium</button>
+		<button type="button" class="btn btn-" data-toggle="button"  ng-click="priorityFilters={priority:'low'}">Low</button>
+
+	</span>
+		
+		<div class="container">
+		  <h3>Coordinators</h3>
+		
+
+<div class="row">
+			<div class="col-md-3">
+
+				<h2 ng-repeat="coordinator in Details.coordinators">
+					<p>{{coordinator}}</p>
+				</h2>
+
+			</div>
+
+			<div class="col-md-9" ng-repeat="task in Details.tasks| filter:priorityFilters">
+
+					<div class="col-md-2">
+						<span
+							ng-class="{task.isComplete: 'glyphicon glyphicon-star', task.isClosed: 'glyphicon glyphicon-close'}"></span>
+						<small>Pending</small>
+					</div>
+					<div class="col-md-5">
+						
+							<a href="#"> <span ng-bind="task.task"></span>
+							</a>
+							<p class="task-description" ng-bind="task.description">
+							</p>
+				   </div>	  
+				
+				
+				<div class="col-md-3">
+				<div class="row">
+						  
+							<ul class="nav nav-pills task-actions">
+								<li><a href="#edit">Edit</a></li>
+								<li><a ng-click="markComplete(task)">Complete</a></li>
+								<li><a ng-click="closeTask(task)">Close</a></li>
+							</ul>
+                     	  					
+				</div>		
+						
+						<div>
+
+								<ul style="list-style: none; padding: 13px">
+								<li><strong>Assign To:</strong> &nbsp; <span
+									ng-bind="task.assignedTo">
+								</span></li>
+								<li><strong>Created At:</strong> <span
+									ng-bind="task.createdAt"></span></li>
+								<li><strong>Due Date:</strong> <span
+									ng-bind="task.dueDate"></span></li>
+							</ul>
+				      </div>
+				</div>
+			   </div>
+				</div>
+			</div>
+
+	    </div>
+	</div>
